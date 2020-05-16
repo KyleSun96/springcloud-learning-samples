@@ -48,4 +48,19 @@ public class OrderController {
         return restTemplate.getForObject(url, Goods.class);
     }
 
+
+    /**
+     * @description: //TODO 使用 Ribbon 简化 restTemplate 的调用过程
+     * 1. 在声明restTemplate的bean时候，添加一个注解：  @LoadBalanced
+     * 2. 在restTemplate发起请求时，需要定义URL时，
+     * host:post处替换为服务提供方的 应用名称： spring.application.name
+     * @param: [id]
+     * @return: com.itheima.consumer.domain.Goods
+     */
+    @GetMapping("/findGoodsById2/{id}")
+    public Goods findGoodsById2(@PathVariable("id") int id) {
+
+        String url = "http://eureka-provider/goods/findOne/" + id;
+        return restTemplate.getForObject(url, Goods.class);
+    }
 }
