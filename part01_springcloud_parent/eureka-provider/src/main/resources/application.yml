@@ -1,0 +1,28 @@
+server:
+  port: 8000
+
+eureka:
+
+  instance:
+    # 主机名
+    hostname: localhost
+    # 将当前实例的ip注册到 eureka server 中，公网中使用。默认是false 注册主机名
+    prefer-ip-address: true
+    # 设置当前实例的ip
+    ip-address: 127.0.0.1
+    # 设置web控制台显示的 实例id
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+    # 每隔3秒向注册中心发一次心跳包  renewal：续约
+    lease-renewal-interval-in-seconds: 3
+    # 如果9秒没有发心跳包，服务器呀，你把我干掉吧~
+    lease-expiration-duration-in-seconds: 9
+
+  client:
+    service-url:
+      # eureka服务端地址，将来客户端使用该地址和
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    # 设置当前应用的名称。将来会在eureka中Application显示。将来需要使用该名称来获取路径
+    name: eureka-provider
