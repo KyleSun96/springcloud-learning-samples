@@ -20,4 +20,4 @@ feign:
 # 设置Ribbon的超时时间
 ribbon:
   ConnectTimeout: 1000 # 网络连接超时时间
-  ReadTimeout: 3000 # 服务提供方处理时间过长时，要在此处改动逻辑处理的超时时长
+  ReadTimeout: 5000 # 服务提供方处理时间过长时，要在此处改动逻辑处理的超时时长
