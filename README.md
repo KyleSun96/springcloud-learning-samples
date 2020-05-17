@@ -1,14 +1,34 @@
 # springcloud-learning-samples
 
-SpringCloud学习案例及笔记
+***
 
-- part01_springcloud_parent
-  - SpringCloud入门案例
-    1. 搭建 Provider 和 Consumer 服务。
-    2. 使用 RestTemplate 完成远程调用。
-    3. 搭建 Eureka Server 服务。
-    4. 改造 Provider 和 Consumer 称为 Eureka Client。
-    5. Consumer 服务 通过从 Eureka Server 中抓取 Provider 地址 完成 远程调用。
+## part01_springcloud_parent
 
-- part01_springcloud_parent
-  - Feign 声明式服务调用优化SpringCloud中Eureka的远程调用
+SpringCloud入门案例
+
+  1. 搭建 Provider 和 Consumer 服务。
+  2. 使用 RestTemplate 完成远程调用。
+  3. 搭建 Eureka Server 服务。
+  4. 改造 Provider 和 Consumer 称为 Eureka Client。
+  5. Consumer 服务 通过从 Eureka Server 中抓取 Provider 地址 完成 远程调用。
+
+## part02_springcloud_feign-parent
+
+Feign 声明式服务调用优化SpringCloud中Eureka的远程调用
+
+## part03_springcloud_hystrix-parent
+
+Hystrix 熔断器入门案例
+
+- Hystix 是 Netflix 开源的一个延迟和容错库，用于隔离访问远程服务、第三方库，防止出现级联失败（雪崩）。
+  
+## part04_springcloud_gateway-parent
+
+Spring Cloud Gateway 网关入门案例
+网关旨在为微服务架构提供一种简单而有效的统一的API路由管理方式。网关也是一个应用，有了网关之后，我们所有的请求都访问网关应用，由网关帮我们去调用其他服务。
+
+- Gateway 与 Eureka 结合，让网关应用能够从注册中心Eureka中，动态的通过应用的名称来获取应用的地址
+- 网关的主要功能有两个：
+
+  1. 路由
+  2. 过滤
