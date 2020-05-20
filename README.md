@@ -44,4 +44,12 @@ Spring Cloud Gateway 网关入门案例
   1. 集中管理配置文件
   2. 不同环境不同配置，动态化的配置更新
   3. 配置信息改变时，不需要重启即可更新配置信息到服务——热部署
-  4. Bus总线可以让多个客户端同时更新。
+  4. Bus总线可以让多个客户端同时更新
+
+## part06_ElasticSearch
+
+SpringBoot整合ES，及 ES api的基础学习。
+
+## part07_elasticsearch_demo2
+
+SpringBoot整合ES操作进阶。
