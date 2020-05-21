@@ -54,7 +54,7 @@ SpringBoot整合ES，及 ES api的基础学习。
 
 SpringBoot整合ES操作进阶。
 
-1. bulk批量导入
+1. 使用bulk将数据库中的数据批量导入处理到ES中
 2. ElasticSearch中的常用查询
    1. matchAll
    2. termQuery
