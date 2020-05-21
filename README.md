@@ -53,3 +53,18 @@ SpringBoot整合ES，及 ES api的基础学习。
 ## part07_elasticsearch_demo2
 
 SpringBoot整合ES操作进阶。
+
+1. bulk批量导入
+2. ElasticSearch中的常用查询
+   1. matchAll
+   2. termQuery
+   3. matchQuery
+   4. 模糊查询
+      - 通配符查询 wildcard
+      - 正则表达式查询
+      - 前缀查询  
+   5. 范围&排序查询
+   6. queryString 多条件查询
+   7. 布尔查询
+   8. 聚合查询
+   9. 高亮查询
