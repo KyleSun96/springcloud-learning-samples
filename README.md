@@ -68,3 +68,21 @@ SpringBoot整合ES操作进阶。
    7. 布尔查询
    8. 聚合查询
    9. 高亮查询
+
+## part08_springcloud_practice
+
+SpringCloud整合复习
+
+需求：
+
+   1. 基于 Spring Boot 搭建商家服务，商品服务
+
+   2. 搭建 Eureka Server 注册中心
+
+   3. 用户服务
+      1. 根据ID查询商家信息
+      2. 添加商品信息（调用商品服务）
+
+   4. 商品服务
+      1. 添加商品信息到MySQL：测试数据
+      2. 使用 Hystix 对添加商品进行降级处理
