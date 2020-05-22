@@ -25,6 +25,13 @@ public class GoodsController {
     @HystrixCommand(fallbackMethod = "addGoods_fallback")
     public Result addGoods(@RequestBody Goods good) {
 
+        // 模拟超时异常
+        /*try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
+
         // 模拟提供端异常
         if (good.getPrice() < 100) {
             throw new RuntimeException("价格不符，无法添加！");
