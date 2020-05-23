@@ -1,0 +1,31 @@
+server:
+  port: 9003
+
+eureka:
+  instance:
+    hostname: localhost # 主机名
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka # eureka服务端地址，将来客户端使用该地址和eureka进行通信
+
+spring:
+
+  datasource:
+    url: jdbc:mysql:///db_goods?serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  application:
+    name: business-elasticsearch # 设置当前应用的名称。将来会在eureka中Application显示。将来需要使用该名称来获取路径
+
+  rabbitmq:
+    host: 192.168.200.129
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+
+elasticsearch:
+  host: 192.168.200.129
+  port: 9200
