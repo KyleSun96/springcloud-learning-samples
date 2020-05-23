@@ -21,6 +21,11 @@ public class GoodsController {
     private GoodsService goodsService;
 
 
+    /**
+     * @description: //TODO 新增一个商品信息，在service层发消息
+     * @param: [good]
+     * @return: com.itheima.entity.Result
+     */
     @PostMapping("/add")
     @HystrixCommand(fallbackMethod = "addGoods_fallback")
     public Result addGoods(@RequestBody Goods good) {
