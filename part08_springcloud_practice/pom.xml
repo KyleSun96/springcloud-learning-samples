@@ -13,6 +13,7 @@
         <module>business-goods</module>
         <module>business-eureka-server</module>
         <module>business-common</module>
+        <module>business-elasticsearch</module>
     </modules>
 
     <!--spring Boot 环境 -->

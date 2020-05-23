@@ -4,16 +4,18 @@ import com.itheima.domain.Goods;
 import com.itheima.domain.Seller;
 import com.itheima.entity.Result;
 import com.itheima.seller.feign.GoodsFeignClient;
+import com.itheima.seller.feign.SearchFeignClient;
 import com.itheima.seller.service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.Map;
 
 /**
  * @Program: SpringCloud
  * @ClassName: SellerController
- * @Description:
+ * @Description: 服务调用端
  * @Author: KyleSun
  **/
 @RestController
@@ -26,6 +28,14 @@ public class SellerController {
     @Autowired
     private GoodsFeignClient goodsFeignClient;
 
+    @Autowired
+    private SearchFeignClient searchFeignClient;
+
+    /**
+     * @description: //TODO 调用端查询商家信息
+     * @param: [id]
+     * @return: com.itheima.entity.Result
+     */
     @GetMapping("/findById/{id}")
     public Result findById(@PathVariable("id") int id) {
         try {
@@ -38,6 +48,11 @@ public class SellerController {
     }
 
 
+    /**
+     * @description: //TODO 调用端添加商品信息
+     * @param: [sellerId, good]
+     * @return: com.itheima.entity.Result
+     */
     @PostMapping("/addGoods/{sellerId}")
     public Result addGoods(@PathVariable("sellerId") int sellerId, @RequestBody Goods good) {
 
@@ -50,6 +65,18 @@ public class SellerController {
         Result result = goodsFeignClient.addGoods(good);
         return result;
 
+    }
+
+
+    /**
+     * @description: //TODO 调用端通过ES查询数据
+     * @param: [param]
+     * @return: com.itheima.entity.Result
+     */
+    @PostMapping("/findGoods")
+    public Result findGoods(@RequestBody Map<String, String> param) {
+        Result result = searchFeignClient.findGoods(param);
+        return result;
     }
 
 }
