@@ -14,6 +14,7 @@
         <module>business-eureka-server</module>
         <module>business-common</module>
         <module>business-elasticsearch</module>
+        <module>business-gateway</module>
     </modules>
 
     <!--spring Boot 环境 -->
