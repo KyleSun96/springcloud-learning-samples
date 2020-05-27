@@ -1,0 +1,35 @@
+server:
+  port: 9527
+
+# 将自己注册到eureka中
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: config-server
+  # spring cloud config
+  cloud:
+    config:
+      server:
+        git:         # git 的 远程仓库地址
+          uri: https://gitee.com/kylesun96/config.git
+      label: master  # 分支配置
+
+  # 配置rabbitmq信息
+  rabbitmq:
+    host: 192.168.200.129
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+
+# 用于暴露bus的刷新端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'

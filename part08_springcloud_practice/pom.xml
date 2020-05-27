@@ -15,6 +15,7 @@
         <module>business-common</module>
         <module>business-elasticsearch</module>
         <module>business-gateway</module>
+        <module>business-config</module>
     </modules>
 
     <!--spring Boot 环境 -->

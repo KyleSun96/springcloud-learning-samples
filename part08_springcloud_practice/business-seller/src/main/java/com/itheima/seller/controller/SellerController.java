@@ -7,6 +7,7 @@ import com.itheima.seller.feign.GoodsFeignClient;
 import com.itheima.seller.feign.SearchFeignClient;
 import com.itheima.seller.service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -19,6 +20,7 @@ import java.util.Map;
  * @Author: KyleSun
  **/
 @RestController
+@RefreshScope // 开启刷新功能
 @RequestMapping("/seller")
 public class SellerController {
 
