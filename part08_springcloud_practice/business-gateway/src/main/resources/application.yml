@@ -19,12 +19,12 @@ spring:
       # uri: 转发路径
       # predicates: 条件,用于请求网关路径的匹配规则
 
-      - id: business-seller
+      - id: gateway-seller
         uri: lb://business-seller
         predicates:
         - Path=/seller/**
 
-      - id: business-goods
+      - id: gateway-goods
         uri: lb://business-goods
         predicates:
         - Path=/goods/**
